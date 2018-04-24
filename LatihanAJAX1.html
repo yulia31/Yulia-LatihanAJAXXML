@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title> LatihanAJAX1.html </title>
+<head>
+<script> function loadXMLDoc() {
+var xmlhttp;
+if (window.XMLHttpRequest) { //code untuk IE7+, Chrome, Opera, Safari
+	xmlhttp = new XMLHttpRequest();
+} else { // code untuk IE6, IE5
+	xmlhttp = new ActiveXObject("{Microsoft.XMLHTTP");
+}
+	xmlhttp.onreadystatechange=function() {
+if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+	document.getElementById("isi").innerHTML=xmlhttp.responseText;
+	}}
+	xmlhttp.open("GET","Soal1.xml",true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="isi">
+<h2>Kalimat Utama Sebeleum Diubah</h2><div>
+<div id="nama"></div>
+<button type="button" onclick="loadXMLDoc()">ubah Tulisan Diatas</button>
+</body>
+</html>
